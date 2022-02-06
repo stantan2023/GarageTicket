@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "989f830c-ae80-4aab-8355-da2af0c87dfd",
+		"name": "GarageTicketServiceCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Park_A_CAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"plate\":\"34-SO-1988\",\r\n\t\"colour\":\"Black\",\r\n\t\"cartype\":\"Car\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/{{version}}/park",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"{{version}}",
+						"park"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Park_A_TRUCK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"plate\":\"34-BO-1987\",\r\n\t\"colour\":\"Red\",\r\n\t\"cartype\":\"Truck\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/{{version}}/park",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"{{version}}",
+						"park"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Park_A_JEEP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plate\": \"34-VO-2018\",\r\n    \"colour\": \"Blue\",\r\n    \"cartype\": \"Jeep\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/{{version}}/park",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"{{version}}",
+						"park"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "STAUS_OF_GARAGE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/{{version}}/status",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"{{version}}",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LEAVE_OF_A_VEHICLE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/{{version}}/leave/:ticketnumber",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"{{version}}",
+						"leave",
+						":ticketnumber"
+					],
+					"variable": [
+						{
+							"key": "ticketnumber",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "version",
+			"value": "v1",
+			"type": "string"
+		}
+	]
+}
